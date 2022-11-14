@@ -1,0 +1,28 @@
+
+input_dir: ${PROJECT_DIR}/${TARGET_NAME}/Resources/
+output_dir: ${PROJECT_DIR}/${TARGET_NAME}/Resources/Generated/
+
+strings:
+  inputs: en.lproj
+  outputs:
+    - templatePath: ../SwiftGen/swiftui-strings-template.stencil
+      params:
+        forceProvidesNamespaces: true
+        enumName: Str
+      output: StringsConstants.swift
+
+xcassets:
+  - inputs: Images.xcassets
+    outputs:
+      - templatePath: ../SwiftGen/swiftui-Images-template.stencil
+        params:
+          forceProvidesNamespaces: true
+          enumName: Img
+        output: ImagesConstants.swift
+  - inputs: Colors.xcassets
+    outputs:
+      - templatePath: ../SwiftGen/swiftui-Colors-template.stencil
+        params:
+          forceProvidesNamespaces: true
+          enumName: Clr
+        output: ColorsConstants.swift

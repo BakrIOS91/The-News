@@ -1,0 +1,49 @@
+/* 
+  Localizable.strings
+  
+*/
+
+//MARK: Genral Local
+"retry" = "Wiederholen";
+"loadMore" = "Mehr Laden";
+"pullToRefresh" = "Zum Aktualisieren ziehen";
+"unImplemented" = "nicht implementiert";
+
+// MARK: - Error Views
+"noDataFound" = "Keine Elemente zum Anzeigen";
+"noDataDescription" = "Bitte versuchen Sie es mit einem anderen Schlüsselwort";
+"youAreOffline" = "Sie sind offline";
+"pleaseCheckYourInternetConnections" = "Bitte überprüfen Sie Ihre Internetverbindung";
+"serverError" = "Serverfehler";
+"unexpectedError" = "Fehler aufgetreten";
+"pleaseTryAgainLater" = "Bitte versuchen Sie es später erneut";
+"unableToLoadThePageServerSentNoData" = "Server hat keine Daten gesendet";
+"notAuthorized" = "Nicht autorisiert";
+"youAreNotAuthorized" = "Sie sind nicht berechtigt, auf diese Seite zuzugreifen";
+"searchPlaceHolder" = "ein. Sonnenblume";
+
+// MARK: Language Selection
+"pleaseChooseLanguage" = "Bitte wählen Sie Ihre gewünschte Sprache";
+"en" = "Englisch";
+"de" = "Deutsch";
+
+// MARK: Tab Bar
+"home" = "Home";
+"settings" = "Einstellungen";
+
+// MARK: Views Titles
+"departments" = "Abteilungen";
+"departmentDetails" = "Abteilungsdetails";
+
+// Mark: Department Details
+"screenMessage" = "Bitte geben Sie das Stichwort ein. Sonnenblume";
+
+
+// MARK: Object Details
+"obj_Name" = "Name: %@";
+"obj_Department" = "Abteilung: %@";
+"obj_Artist" = "Künstlerin: %@";
+"obj_City" = "Stadt: %@";
+
+// MARK: Setting
+"language" = "Sprache";

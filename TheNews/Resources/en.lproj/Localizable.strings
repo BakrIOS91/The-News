@@ -1,0 +1,50 @@
+/* 
+  Localizable.strings
+  
+*/
+
+//MARK: Genral Local
+"retry" = "Retry";
+"loadMore" = "Load More";
+"pullToRefresh" = "Pull to Refresh";
+"unImplemented" = "unImplemented";
+
+// MARK: - Error Views
+"noDataFound" = "No items to display";
+"noDataDescription" = "Please try different keyword";
+"youAreOffline" = "You are offline";
+"pleaseCheckYourInternetConnections" = "Please check your internet connection";
+"serverError" = "Server error";
+"unexpectedError" = "Error occurred";
+"pleaseTryAgainLater" = "Please try again later";
+"unableToLoadThePageServerSentNoData" = "Server sent no data";
+"retry" = "Retry";
+"notAuthorized" = "Not authorized";
+"youAreNotAuthorized" = "You are not authorized to access this page";
+"searchPlaceHolder" = "Ex. Sunflower";
+
+// MARK: Language Selection
+"pleaseChooseLanguage" = "Please choose your desired language";
+"en" = "English";
+"de" = "Deutsch";
+
+// MARK: Tab Bar
+"home" = "Home";
+"settings" = "Settings";
+
+// MARK: Views Titles
+"departments" = "Departments";
+"departmentDetails" = "Department Details";
+
+// Mark: Department Details
+"screenMessage" = "Please enter keyword Ex. Sunflower";
+
+// MARK: Object Details
+"obj_Name" = "Name: %@";
+"obj_Department" = "Department: %@";
+"obj_Artist" = "Artist: %@";
+"obj_City" = "City: %@";
+
+
+// MARK: Setting
+"language" = "Language";
