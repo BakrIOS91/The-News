@@ -20,7 +20,7 @@ protocol BaseRequestProtocol {
 
 extension BaseRequestProtocol {
     var host: String {return kBaseURL}
-    var apiPath: String { return "/v1"}
+    var apiPath: String { return "/v2"}
     var headers: [String: String] { return [:] }
     var baseHeaders : [String:String] { return defaultHeaders }
     var requestTimeOut: Float { return 30 }

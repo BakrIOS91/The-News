@@ -4,7 +4,7 @@
 
 import Foundation
 
-let kAppAPIKey = "qCKjdr1D6n6Ddp0EbNAEKaiH28IMBQh6koWGwXmgss"
+let kAppAPIKey = "1b6017aa60d54ebe90056ee589833192"
 let kAppEnvironment: AppEnvironment = .development
 
 // MARK: - kBaseURLComponents
@@ -33,7 +33,7 @@ var kScheme: String {
 // MARK: - kHost
 var kHost: String {
     switch kAppEnvironment {
-    default: return "api.thenewsapi.com"
+    default: return "newsapi.org"
     }
 }
 

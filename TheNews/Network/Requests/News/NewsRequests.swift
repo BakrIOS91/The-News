@@ -7,34 +7,31 @@
 
 import Foundation
 enum NewsRequests: BaseRequestProtocol {
-    case getNewsList
-    case getNewsDetails(id: String)
-    
-    var newsPath: String {
-        return "/news"
-    }
+    case getNewsList(query: String, pageIndex: Int, pageSize: Int)
     
     var path: String {
         switch self {
         case .getNewsList:
-            return newsPath + "/all"
-        case .getNewsDetails(let id):
-            return newsPath + "/uuid/\(id)"
+            return "/everything"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        default:
+        case .getNewsList(_,_,_):
             return .GET
         }
     }
     
     var parameters: Parameters?{
         switch self {
-        default:
+        case .getNewsList(let query, let pageIndex, let pageSize):
             return [
-                KeyParameters.apiToken: kAppAPIKey
+                "q": query,
+                "language": Locale.bestMatching.identifier,
+                "apiKey": kAppAPIKey,
+                "pageSize": pageSize,
+                "page": pageIndex
             ]
         }
     }
