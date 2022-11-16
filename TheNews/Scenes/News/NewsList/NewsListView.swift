@@ -24,17 +24,18 @@ struct NewsListView: View {
                             }
                             
                             if viewStore.state.shouldPaginate {
-                                Text("featching New Records....")
+                                Text(Str.fetchingNewRecords.key)
+                                    .font(.regularWithSize12)
                                     .onAppear{
-                                        viewStore.send(.getNextPageIfNeeded)
+                                        Helpers.shared.wait {
+                                            viewStore.send(.getNextPageIfNeeded)
+                                        }
                                     }
-                                    .isHidden(!viewStore.shouldPaginate)
                                     .listRowSeparator(.hidden)
                             }
                         }
                         .listStyle(.plain)
                     } loadingContent: {
-                        
                         ScrollView {
                             ForEach((0...10), id: \.self) { _ in
                                 NewsCell(model: .mock)
@@ -45,7 +46,7 @@ struct NewsListView: View {
                     } retryHandler: {
                         viewStore.send(.fetchNews(query: searchQuery, atPage: .first))
                     }
-                    .navigationTitle("News")
+                    .navigationTitle(Str.news.key)
                     .navigationViewStyle(.stack)
                 }
                 .onAppear{

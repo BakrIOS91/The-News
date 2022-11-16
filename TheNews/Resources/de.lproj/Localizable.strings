@@ -31,19 +31,9 @@
 "home" = "Home";
 "settings" = "Einstellungen";
 
-// MARK: Views Titles
-"departments" = "Abteilungen";
-"departmentDetails" = "Abteilungsdetails";
-
-// Mark: Department Details
-"screenMessage" = "Bitte geben Sie das Stichwort ein. Sonnenblume";
-
-
-// MARK: Object Details
-"obj_Name" = "Name: %@";
-"obj_Department" = "Abteilung: %@";
-"obj_Artist" = "Künstlerin: %@";
-"obj_City" = "Stadt: %@";
-
 // MARK: Setting
 "language" = "Sprache";
+
+// MARK: News List
+"News" = "Nachrichten";
+"fetchingNewRecords" = "Neue Rekorde holen......";

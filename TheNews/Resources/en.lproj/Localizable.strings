@@ -32,19 +32,9 @@
 "home" = "Home";
 "settings" = "Settings";
 
-// MARK: Views Titles
-"departments" = "Departments";
-"departmentDetails" = "Department Details";
-
-// Mark: Department Details
-"screenMessage" = "Please enter keyword Ex. Sunflower";
-
-// MARK: Object Details
-"obj_Name" = "Name: %@";
-"obj_Department" = "Department: %@";
-"obj_Artist" = "Artist: %@";
-"obj_City" = "City: %@";
-
-
 // MARK: Setting
 "language" = "Language";
+
+// MARK: News List
+"News" = "News";
+"fetchingNewRecords" = "Fetching new records......";

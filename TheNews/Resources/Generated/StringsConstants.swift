@@ -7,40 +7,24 @@ import SwiftUI
 public enum Str {
   /// Deutsch
   public static let de = LocalizedString(table: "Localizable", lookupKey: "de")
-  /// Department Details
-  public static let departmentDetails = LocalizedString(table: "Localizable", lookupKey: "departmentDetails")
-  /// Departments
-  public static let departments = LocalizedString(table: "Localizable", lookupKey: "departments")
   /// English
   public static let en = LocalizedString(table: "Localizable", lookupKey: "en")
+  /// Fetching new records......
+  public static let fetchingNewRecords = LocalizedString(table: "Localizable", lookupKey: "fetchingNewRecords")
   /// Home
   public static let home = LocalizedString(table: "Localizable", lookupKey: "home")
   /// Language
   public static let language = LocalizedString(table: "Localizable", lookupKey: "language")
   /// Load More
   public static let loadMore = LocalizedString(table: "Localizable", lookupKey: "loadMore")
+  /// News
+  public static let news = LocalizedString(table: "Localizable", lookupKey: "News")
   /// Please try different keyword
   public static let noDataDescription = LocalizedString(table: "Localizable", lookupKey: "noDataDescription")
   /// No items to display
   public static let noDataFound = LocalizedString(table: "Localizable", lookupKey: "noDataFound")
   /// Not authorized
   public static let notAuthorized = LocalizedString(table: "Localizable", lookupKey: "notAuthorized")
-  /// Artist: %@
-  public static func objArtist(_ p1: Any) -> String {
-    return tr("Localizable", "obj_Artist", String(describing: p1))
-  }
-  /// City: %@
-  public static func objCity(_ p1: Any) -> String {
-    return tr("Localizable", "obj_City", String(describing: p1))
-  }
-  /// Department: %@
-  public static func objDepartment(_ p1: Any) -> String {
-    return tr("Localizable", "obj_Department", String(describing: p1))
-  }
-  /// Name: %@
-  public static func objName(_ p1: Any) -> String {
-    return tr("Localizable", "obj_Name", String(describing: p1))
-  }
   /// Please check your internet connection
   public static let pleaseCheckYourInternetConnections = LocalizedString(table: "Localizable", lookupKey: "pleaseCheckYourInternetConnections")
   /// Please choose your desired language
@@ -51,8 +35,6 @@ public enum Str {
   public static let pullToRefresh = LocalizedString(table: "Localizable", lookupKey: "pullToRefresh")
   /// Retry
   public static let retry = LocalizedString(table: "Localizable", lookupKey: "retry")
-  /// Please enter keyword Ex. Sunflower
-  public static let screenMessage = LocalizedString(table: "Localizable", lookupKey: "screenMessage")
   /// Ex. Sunflower
   public static let searchPlaceHolder = LocalizedString(table: "Localizable", lookupKey: "searchPlaceHolder")
   /// Server error

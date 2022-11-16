@@ -14,17 +14,15 @@ struct NewsCell: View {
     var body: some View {
         Group {
             HStack {
-                Unwrap(model.urlToImage?.toURL()){ imageURL in
-                    KFImage(imageURL)
-                        .placeholder {
-                            Img.splash
-                                .resizable()
-                                .frame(width: 100, height: 100, alignment: .center)
-                        }
-                        .resizable()
-                        .frame(width: 100, height: 100, alignment: .center)
-                    
-                }
+                
+                KFImage(model.urlToImage?.toURL())
+                    .placeholder {
+                        Img.splash
+                            .resizable()
+                            .frame(width: 100, height: 100, alignment: .center)
+                    }
+                    .resizable()
+                    .frame(width: 100, height: 100, alignment: .center)
                 
                 VStack(alignment: .leading){
                     Unwrap(model.title){ title in
