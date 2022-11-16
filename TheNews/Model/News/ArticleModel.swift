@@ -7,7 +7,8 @@
 
 import Foundation
 // MARK: - Article
-struct Article: Codable {
+struct Article: Codable, Equatable {
+    let id: UUID = UUID()
     let source: Source?
     let author, title, articleDescription: String?
     let url: String?
@@ -19,6 +20,10 @@ struct Article: Codable {
         case source, author, title
         case articleDescription = "description"
         case url, urlToImage, publishedAt, content
+    }
+    
+    static func == (lhs: Article, rhs: Article) -> Bool {
+        return lhs.id == rhs.id
     }
 }
 

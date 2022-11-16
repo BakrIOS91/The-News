@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - NewsList
-struct NewsList: Codable {
+struct NewsList: Codable, Equatable{
     let status: String?
     let totalResults: Int?
     let articles: [Article]?
@@ -29,9 +29,7 @@ extension NewsList {
             .mock,
             .mock,
             .mock,
-            .mock,
-            .mock,
-            .mock,
+            .mock
         ]
     )
 }

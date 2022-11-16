@@ -10,6 +10,12 @@ extension String {
         .init(self)
     }
     
+    var date: String {
+        let dateFormatter = DateFormatter()
+        guard let date = dateFormatter.date(fromString: self, withFormat: .yyyyMMddTHHmmssZ)?.toLocalTime() else {return ""}
+        return dateFormatter.string(fromDate: date, withFormate: .dMMMyyyy)
+    }
+    
     func capitalizingFirstLetter() -> String {
         return prefix(1).capitalized + dropFirst()
     }

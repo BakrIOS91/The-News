@@ -4,7 +4,7 @@
 
 import Foundation
 
-let kAppAPIKey = "1b6017aa60d54ebe90056ee589833192"
+let kAppAPIKey = "f725fafcc709415e96c35533e2c50e12" // 1: f725fafcc709415e96c35533e2c50e12 // 2: 1b6017aa60d54ebe90056ee589833192
 let kAppEnvironment: AppEnvironment = .development
 
 // MARK: - kBaseURLComponents

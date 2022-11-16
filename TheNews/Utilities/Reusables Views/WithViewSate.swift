@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WithViewSate<Content: View, LoadingContent: View>: View {
+struct WithViewState<Content: View, LoadingContent: View>: View {
     var viewState: ViewState
     let content: Content
     let loadingContent: LoadingContent
@@ -31,30 +31,20 @@ struct WithViewSate<Content: View, LoadingContent: View>: View {
     var body: some View {
         switch viewState {
         case .loaded:
-            if isRefreshable {
-                Refresher(
-                    showingScrollIndicator: false
-                ) {
-                    content
-                } onRefresh: {
-                    await retryHandler()
+            content
+                .if(isRefreshable) { view in
+                    view.refreshable {
+                            await retryHandler()
+                        }
                 }
-            } else {
-                content
-            }
             
         case .loading:
-            if isRefreshable {
-                Refresher(
-                    showingScrollIndicator: false
-                ) {
-                    loadingContent
-                } onRefresh: {
-                   await retryHandler()
+            loadingContent
+                .if(isRefreshable) { view in
+                    view.refreshable {
+                            await retryHandler()
+                        }
                 }
-            } else {
-                loadingContent
-            }
         case .noData(let description):
             ErrorView(
                 statusImage: Img.nodataError,
@@ -111,7 +101,7 @@ struct WithViewSate<Content: View, LoadingContent: View>: View {
 struct WithViewSate_Previews: PreviewProvider {
     static var previews: some View {
         LocalePreview{
-            WithViewSate(
+            WithViewState(
                 .loading,
                 isRefreshable: true
             ) {
@@ -137,6 +127,6 @@ struct WithViewSate_Previews: PreviewProvider {
                 try? await Task.sleep(nanoseconds: 3_000_000_000)
             }
         }
-
+        
     }
 }

@@ -7,10 +7,16 @@ import SwiftUI
 struct TabBarView: View {
     var body: some View {
         TabView {
-            UnImplmentedView()
-                .tabItem {
-                    Label("home", systemImage: "house.fill")
-                }
+            NewsListView(store:
+                    .init(
+                        initialState: NewsListFeature.State(),
+                        reducer: NewsListFeature()
+                    )
+            )
+            .tabItem {
+                Label("home", systemImage: "house.fill")
+            }
+            
             //gear
             SettingView()
                 .tabItem {

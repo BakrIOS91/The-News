@@ -19,3 +19,8 @@ enum ViewState: Equatable {
     case unexpected(description: LocalizedStringKey)
     case custom(icon: Image, title: LocalizedStringKey, description: LocalizedStringKey, retryable: Bool)
 }
+
+enum PageIndex {
+    case first
+    case next
+}
