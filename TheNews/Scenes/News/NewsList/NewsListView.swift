@@ -14,9 +14,6 @@ struct NewsListView: View {
     @State var searchQuery: String = ""
     
     var body: some View {
-        ZStack {
-            Clr.appRed.ignoresSafeArea()
-            
             WithViewStore(store) { viewStore in
                 NavigationView {
                     WithViewState(viewStore.viewState, isRefreshable: true) {
@@ -34,11 +31,10 @@ struct NewsListView: View {
                                     .isHidden(!viewStore.shouldPaginate)
                                     .listRowSeparator(.hidden)
                             }
-                            
                         }
                         .listStyle(.plain)
-                        
                     } loadingContent: {
+                        
                         ScrollView {
                             ForEach((0...10), id: \.self) { _ in
                                 NewsCell(model: .mock)
@@ -60,8 +56,6 @@ struct NewsListView: View {
                     viewStore.send(.fetchNews(query: searchQuery, atPage: .first))
                 }
             }
-        }
-        
     }
 }
 struct NewsListView_Previews: PreviewProvider {
