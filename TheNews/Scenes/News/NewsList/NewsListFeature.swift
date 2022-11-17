@@ -27,7 +27,7 @@ struct NewsListFeature: ReducerProtocol, NetworkHelper {
         case fetchNews(query: String, atPage: PageIndex)
         case newsListResponse(TaskResult<NewsList>)
         case getNextPageIfNeeded
-        case didSelectArticle(article: Article)
+        case didSelectArticle(article: Article?)
     }
         
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {

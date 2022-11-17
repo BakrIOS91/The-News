@@ -10,58 +10,66 @@ import ComposableArchitecture
 
 
 struct NewsListView: View {
-    let store: StoreOf<NewsListFeature>
     @State var searchQuery: String = ""
+    let store: StoreOf<NewsListFeature>
     
     var body: some View {
-            WithViewStore(store) { viewStore in
-                NavigationView {
-                    WithViewState(viewStore.viewState, isRefreshable: true) {
-                        List {
-                            ForEach(viewStore.newsList, id: \.id){ article in
-                                NewsCell(model: article)
-                                    .frame(height: 90)
-                                    .onTapGesture {
-                                        viewStore.send(.didSelectArticle(article: article))
-                                    }
-                            }
-                            
-                            if viewStore.state.shouldPaginate {
-                                Text(Str.fetchingNewRecords.key)
-                                    .font(.regularWithSize12)
-                                    .onAppear{
-                                        Helpers.shared.wait {
-                                            viewStore.send(.getNextPageIfNeeded)
-                                        }
-                                    }
-                                    .listRowSeparator(.hidden)
-                            }
+        WithViewStore(store, observe: { $0 }) { viewStore in
+            NavigationView {
+                WithViewState(viewStore.viewState, isRefreshable: true) {
+                    List {
+                        ForEach(viewStore.newsList, id: \.id){ article in
+                            NewsCell(model: article)
+                                .frame(height: 90)
+                                .onTapGesture {
+                                    viewStore.send(.didSelectArticle(article: article))
+                                }
                         }
-                        .listStyle(.plain)
                         
-                    } loadingContent: {
-                        ScrollView {
-                            ForEach((0...10), id: \.self) { _ in
-                                NewsCell(model: .mock)
-                            }
+                        if viewStore.state.shouldPaginate {
+                            Text(Str.fetchingNewRecords.key)
+                                .font(.regularWithSize12)
+                                .onAppear{
+                                    Helpers.shared.wait {
+                                        viewStore.send(.getNextPageIfNeeded)
+                                    }
+                                }
+                                .listRowSeparator(.hidden)
                         }
-                        .redacted(reason: .placeholder)
-                        .padding()
-                    } retryHandler: {
-                        viewStore.send(.fetchNews(query: searchQuery, atPage: .first))
                     }
-                    .navigationTitle(Str.news.key)
-                    .navigationViewStyle(.stack)
-//                    .navigation(item: viewStore.bind) {  NewsDetailsView(model: $0) }
-                }
-                .onAppear{
+                    .listStyle(.plain)
+                    
+                } loadingContent: {
+                    ScrollView {
+                        ForEach((0...10), id: \.self) { _ in
+                            NewsCell(model: .mock)
+                        }
+                    }
+                    .redacted(reason: .placeholder)
+                    .padding()
+                } retryHandler: {
                     viewStore.send(.fetchNews(query: searchQuery, atPage: .first))
                 }
-                .searchable(text: $searchQuery)
-                .onChange(of: searchQuery) { newValue in
-                    viewStore.send(.fetchNews(query: searchQuery, atPage: .first))
+                .navigationTitle(Str.news.key)
+                .navigationViewStyle(.stack)
+                .navigation(
+                    item:
+                        viewStore.binding(
+                            get: \.selectedArticle,
+                            send: .didSelectArticle(article: nil)
+                        )
+                ) {
+                    NewsDetailsView(model: $0)
                 }
             }
+            .onAppear{
+                viewStore.send(.fetchNews(query: searchQuery, atPage: .first))
+            }
+            .searchable(text: $searchQuery)
+            .onChange(of: searchQuery) { newValue in
+                viewStore.send(.fetchNews(query: searchQuery, atPage: .first))
+            }
+        }
     }
 }
 struct NewsListView_Previews: PreviewProvider {
