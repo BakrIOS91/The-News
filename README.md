@@ -6,7 +6,7 @@
 
 ## The News
 
-A SwiftUI Application With Composable Archticture (TCA) Design Pattern
+A SwiftUI Application With Composable Archticture (TCA)
 
 
 ## Supports
