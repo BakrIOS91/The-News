@@ -20,12 +20,14 @@ struct NewsListFeature: ReducerProtocol, NetworkHelper {
         var viewState: ViewState = .loading
         var newsList: [Article] = []
         var totalNewsItem: Int = 0
+        var selectedArticle: Article?
     }
     
     enum Action: Equatable {
         case fetchNews(query: String, atPage: PageIndex)
         case newsListResponse(TaskResult<NewsList>)
         case getNextPageIfNeeded
+        case didSelectArticle(article: Article)
     }
         
     func reduce(into state: inout State, action: Action) -> EffectTask<Action> {
@@ -78,6 +80,9 @@ struct NewsListFeature: ReducerProtocol, NetworkHelper {
             } else {
                 state.shouldPaginate = false
             }
+            return .none
+        case .didSelectArticle(let article):
+            state.selectedArticle = article
             return .none
         }
     }

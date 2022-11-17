@@ -24,7 +24,7 @@ extension String {
         self = self.capitalizingFirstLetter()
     }
     
-    func toURL() -> URL? {
+    var toURL: URL? {
         return URL(string: self)
     }
     

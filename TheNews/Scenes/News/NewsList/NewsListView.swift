@@ -18,9 +18,12 @@ struct NewsListView: View {
                 NavigationView {
                     WithViewState(viewStore.viewState, isRefreshable: true) {
                         List {
-                            ForEach(viewStore.newsList, id: \.id){ newsItem in
-                                NewsCell(model: newsItem)
+                            ForEach(viewStore.newsList, id: \.id){ article in
+                                NewsCell(model: article)
                                     .frame(height: 90)
+                                    .onTapGesture {
+                                        viewStore.send(.didSelectArticle(article: article))
+                                    }
                             }
                             
                             if viewStore.state.shouldPaginate {
@@ -35,6 +38,7 @@ struct NewsListView: View {
                             }
                         }
                         .listStyle(.plain)
+                        
                     } loadingContent: {
                         ScrollView {
                             ForEach((0...10), id: \.self) { _ in
@@ -48,6 +52,7 @@ struct NewsListView: View {
                     }
                     .navigationTitle(Str.news.key)
                     .navigationViewStyle(.stack)
+//                    .navigation(item: viewStore.bind) {  NewsDetailsView(model: $0) }
                 }
                 .onAppear{
                     viewStore.send(.fetchNews(query: searchQuery, atPage: .first))

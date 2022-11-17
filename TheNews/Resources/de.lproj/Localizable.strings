@@ -37,3 +37,10 @@
 // MARK: News List
 "News" = "Nachrichten";
 "fetchingNewRecords" = "Neue Rekorde holen......";
+
+// MARK: - Details
+"details" = "Einzelheiten";
+"author %@" = "**Autorin:** %@";
+"publishDate %@" = "**Erscheinungsdatum:** %@";
+"source %@" = "**Artikelquelle:** %@";
+"description" = "Bezeichnung";

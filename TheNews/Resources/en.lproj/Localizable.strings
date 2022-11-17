@@ -38,3 +38,12 @@
 // MARK: News List
 "News" = "News";
 "fetchingNewRecords" = "Fetching new records......";
+
+// MARK: - Details
+"details" = "Details";
+"author %@" = "**Author:** %@";
+"publishDate %@" = "**Publish Date:** %@";
+"source %@" = "**Article source:** %@";
+"description" = "Description";
+
+

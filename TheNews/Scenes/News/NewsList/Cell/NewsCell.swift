@@ -15,7 +15,7 @@ struct NewsCell: View {
         Group {
             HStack {
                 
-                KFImage(model.urlToImage?.toURL())
+                KFImage(model.urlToImage?.toURL)
                     .placeholder {
                         Img.splash
                             .resizable()

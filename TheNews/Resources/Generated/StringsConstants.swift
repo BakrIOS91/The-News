@@ -5,8 +5,16 @@ import SwiftUI
 // MARK: - Strings
 
 public enum Str {
+  /// **Author:** %@
+  public static func author(_ p1: Any) -> LocalizedStringKey {
+    return tr("Localizable", "author %@", String(describing: p1)).localizedStringKey
+  }
   /// Deutsch
   public static let de = LocalizedString(table: "Localizable", lookupKey: "de")
+  /// Description
+  public static let description = LocalizedString(table: "Localizable", lookupKey: "description")
+  /// Details
+  public static let details = LocalizedString(table: "Localizable", lookupKey: "details")
   /// English
   public static let en = LocalizedString(table: "Localizable", lookupKey: "en")
   /// Fetching new records......
@@ -31,6 +39,10 @@ public enum Str {
   public static let pleaseChooseLanguage = LocalizedString(table: "Localizable", lookupKey: "pleaseChooseLanguage")
   /// Please try again later
   public static let pleaseTryAgainLater = LocalizedString(table: "Localizable", lookupKey: "pleaseTryAgainLater")
+  /// **Publish Date:** %@
+  public static func publishDate(_ p1: Any) -> LocalizedStringKey {
+    return tr("Localizable", "publishDate %@", String(describing: p1)).localizedStringKey
+  }
   /// Pull to Refresh
   public static let pullToRefresh = LocalizedString(table: "Localizable", lookupKey: "pullToRefresh")
   /// Retry
@@ -41,6 +53,10 @@ public enum Str {
   public static let serverError = LocalizedString(table: "Localizable", lookupKey: "serverError")
   /// Settings
   public static let settings = LocalizedString(table: "Localizable", lookupKey: "settings")
+  /// **Article source:** %@
+  public static func source(_ p1: Any) -> LocalizedStringKey {
+    return tr("Localizable", "source %@", String(describing: p1)).localizedStringKey
+  }
   /// Server sent no data
   public static let unableToLoadThePageServerSentNoData = LocalizedString(table: "Localizable", lookupKey: "unableToLoadThePageServerSentNoData")
   /// Error occurred
