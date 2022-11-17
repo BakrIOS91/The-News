@@ -49,9 +49,7 @@ struct WithViewState<Content: View, LoadingContent: View>: View {
             ErrorView(
                 statusImage: Img.nodataError,
                 statusTitle: Str.noDataFound.key,
-                statusDescription: description,
-                mainButtonTitle: Str.retry.key,
-                mainButtonAction: retryHandler
+                statusDescription: description
             )
         case .offline(let description):
             ErrorView(
