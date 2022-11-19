@@ -12,15 +12,13 @@ import SwiftUI
   {% call casesBlock asset.items %}
   {% elif asset.type == "color" %}
   public static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = Color("{{asset.value}}")
-  {% elif asset.type == "image" %}
-  public static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = Image("{{asset.value}}")
   {% endif %}
   {% endfor %}
 {% endmacro %}
 
 /// Cases to reference for safely initializing colors, like so: `Clr.Fill.primary`
 {% set enumName %}{{param.enumName|default:"Clr"}}{% endset %}
-public enum {{enumName}} {
+extension Color {
   {% for catalog in catalogs %}
   {% if catalog.name == "Colors" %}
   {% call casesBlock catalog.assets %}

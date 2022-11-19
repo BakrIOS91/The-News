@@ -5,12 +5,12 @@
 import SwiftUI
 
 struct ErrorView: View {
-    var viewBackgroundColor: Color = Clr.appBackground
+    var viewBackgroundColor: Color = .appBackground
     var statusImage: Image?
     var statusTitle: LocalizedStringKey?
     var statusDescription: LocalizedStringKey?
     var mainButtonTitle: LocalizedStringKey?
-    var mainButtonBackgroundColor = Clr.appMainBlue
+    var mainButtonBackgroundColor: Color = .appMainBlue
     var mainButtonAction: (() async -> ())? = nil
     
     var secondaryButtonTitle: LocalizedStringKey?
@@ -93,7 +93,7 @@ struct ErrorView: View {
 struct ErrorView_Previews: PreviewProvider {
     static var previews: some View {
         LocalePreview {
-            ErrorView(statusImage: Img.server,
+            ErrorView(statusImage: .server,
                       statusTitle: Str.serverError.key,
                       statusDescription: "description",
                       mainButtonTitle: Str.retry.key,

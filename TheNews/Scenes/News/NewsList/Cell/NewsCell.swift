@@ -17,7 +17,7 @@ struct NewsCell: View {
                 
                 KFImage(model.urlToImage?.toURL)
                     .placeholder {
-                        Img.splash
+                        Image.splash
                             .resizable()
                             .frame(width: 100, height: 100, alignment: .center)
                     }
@@ -53,8 +53,8 @@ struct NewsCell: View {
             }
         }
         .background(
-            Clr.appWhite
-                .shadow(color: Clr.appBlackWithOpacity10, radius: 5)
+            Color.appWhite
+                .shadow(color: .appBlackWithOpacity10, radius: 5)
         )
         .listRowSeparator(.hidden)
     }

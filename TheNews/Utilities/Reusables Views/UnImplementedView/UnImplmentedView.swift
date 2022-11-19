@@ -10,15 +10,15 @@ import SwiftUI
 struct UnImplmentedView: View {
     var body: some View {
         VStack{
-            Img.unImplemented
+            Image.unImplemented
                 .resizable()
                 .frame(width: 150, height: 150)
-                .foregroundColor(Clr.appBlackWithOpacity50)
+                .foregroundColor(.appBlackWithOpacity50)
 
             
             Text(Str.unImplemented.key)
                 .font(.boldWithSize20)
-                .foregroundColor(Clr.appBlackWithOpacity50)
+                .foregroundColor(.appBlackWithOpacity50)
         }
     }
 }

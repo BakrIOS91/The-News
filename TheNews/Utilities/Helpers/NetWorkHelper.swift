@@ -39,7 +39,7 @@ extension NetworkHelper {
         case .unauthorized(_,_):
             //Should be Custom error
             return .custom(
-                icon: Img.server,
+                icon: .server,
                 title: "unauthorized",
                 description: "unauthorized",
                 retryable: false

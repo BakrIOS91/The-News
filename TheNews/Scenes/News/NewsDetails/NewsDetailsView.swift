@@ -42,7 +42,7 @@ struct NewsDetailsView: View {
                     } label: {
                         Image(systemName: "square.and.arrow.up")
                     }
-                    .foregroundColor(Clr.appMainBlue)
+                    .foregroundColor(.appMainBlue)
                 }
             }
         }
@@ -51,13 +51,13 @@ struct NewsDetailsView: View {
     var articleImageView: some View {
         KFImage(model.urlToImage?.toURL)
             .placeholder {
-                Img.splash
+                Image.splash
                     .resizable()
             }
             .resizable()
             .background(
-                Clr.appWhite
-                    .shadow(color: Clr.black.opacity(0.6), radius: 5)
+                Color.appWhite
+                    .shadow(color: .black.opacity(0.6), radius: 5)
                 
             )
     }

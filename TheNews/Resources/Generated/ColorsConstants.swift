@@ -3,7 +3,7 @@
 import SwiftUI
 
 /// Cases to reference for safely initializing colors, like so: `Clr.Fill.primary`
-public enum Clr {
+extension Color {
   public static let appBackground = Color("appBackground")
   public static let appBlackWithOpacity10 = Color("appBlackWithOpacity10")
   public static let appBlackWithOpacity50 = Color("appBlackWithOpacity50")

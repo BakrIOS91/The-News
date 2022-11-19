@@ -47,13 +47,13 @@ struct WithViewState<Content: View, LoadingContent: View>: View {
                 }
         case .noData(let description):
             ErrorView(
-                statusImage: Img.nodataError,
+                statusImage: .nodataError,
                 statusTitle: Str.noDataFound.key,
                 statusDescription: description
             )
         case .offline(let description):
             ErrorView(
-                statusImage: Img.noNetworkErr,
+                statusImage: .noNetworkErr,
                 statusTitle: Str.youAreOffline.key,
                 statusDescription: description,
                 mainButtonTitle: Str.retry.key,
@@ -61,7 +61,7 @@ struct WithViewState<Content: View, LoadingContent: View>: View {
             )
         case .serverError(let description):
             ErrorView(
-                statusImage: Img.server,
+                statusImage: .server,
                 statusTitle: Str.serverError.key,
                 statusDescription: description,
                 mainButtonTitle: Str.retry.key,
@@ -69,7 +69,7 @@ struct WithViewState<Content: View, LoadingContent: View>: View {
             )
         case .unexpected(let description):
             ErrorView(
-                statusImage: Img.server,
+                statusImage: .server,
                 statusTitle: Str.unexpectedError.key,
                 statusDescription: description,
                 mainButtonTitle: Str.retry.key,

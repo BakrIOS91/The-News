@@ -11,10 +11,10 @@ struct LanguageSelectionView: View {
     var body: some View {
         VStack(spacing: 10){
             
-            Img.languageSelection
+            Image.languageSelection
                 .resizable()
                 .frame(width: 100, height: 100)
-                .foregroundColor(Clr.appMainBlue)
+                .foregroundColor(.appMainBlue)
                 .padding()
             
             Text("pleaseChooseLanguage")
@@ -34,7 +34,7 @@ struct LanguageSelectionView: View {
                         }
                     }
                     .frame(maxWidth: .infinity, maxHeight: 60)
-                    .background(Clr.appMainBlue)
+                    .background(Color.appMainBlue)
                     .foregroundColor(.white)
                     .cornerRadius(5)
                 }
@@ -49,9 +49,9 @@ struct LanguageSelectionView: View {
     func languageIcon(_ locale: Locale) -> Image {
         switch locale {
         case .de:
-            return Img.germany
+            return Image.germany
         case .en:
-            return Img.britain
+            return Image.britain
         default:
             return Image("")
         }

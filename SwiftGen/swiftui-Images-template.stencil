@@ -10,17 +10,15 @@ import SwiftUI
   }
   {% elif asset.items %}
   {% call casesBlock asset.items %}
-  {% elif asset.type == "color" %}
-  public static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = Color("{{asset.value}}")
   {% elif asset.type == "image" %}
-  public static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = Image("{{asset.value}}")
+  static let {{asset.name|swiftIdentifier:"pretty"|lowerFirstWord|escapeReservedKeywords}} = Image("{{asset.value}}")
   {% endif %}
   {% endfor %}
 {% endmacro %}
 
 /// Cases to reference for safely initializing images, like so: `Img.Onboarding.header`
 {% set enumName %}{{param.enumName|default:"Img"}}{% endset %}
-public enum {{enumName}} {
+extension Image {
   {% for catalog in catalogs %}
   {% if catalog.name == "Images" %}
   {% call casesBlock catalog.assets %}

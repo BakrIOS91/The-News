@@ -3,15 +3,15 @@
 import SwiftUI
 
 /// Cases to reference for safely initializing images, like so: `Img.Onboarding.header`
-public enum Img {
-  public static let noNetworkErr = Image("noNetworkErr")
-  public static let nodataError = Image("nodataError")
-  public static let server = Image("server")
-  public static let warning = Image("warning")
-  public static let britain = Image("Britain")
-  public static let languageSelection = Image("LanguageSelection")
-  public static let germany = Image("germany")
-  public static let imagePlaceholder = Image("imagePlaceholder")
-  public static let splash = Image("splash")
-  public static let unImplemented = Image("unImplemented")
+extension Image {
+  static let noNetworkErr = Image("noNetworkErr")
+  static let nodataError = Image("nodataError")
+  static let server = Image("server")
+  static let warning = Image("warning")
+  static let britain = Image("Britain")
+  static let languageSelection = Image("LanguageSelection")
+  static let germany = Image("germany")
+  static let imagePlaceholder = Image("imagePlaceholder")
+  static let splash = Image("splash")
+  static let unImplemented = Image("unImplemented")
 }
