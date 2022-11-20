@@ -1,9 +1,5 @@
 //
 //  Refresher.swift
-//  TCADemo
-//
-//  Created by Bakr mohamed on 09/11/2022.
-//
 
 import SwiftUI
 

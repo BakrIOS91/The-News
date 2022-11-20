@@ -1,9 +1,6 @@
 //
 //  TheNewsUITests.swift
-//  TheNewsUITests
-//
-//  Created by Bakr mohamed on 14/11/2022.
-//
+
 
 import XCTest
 

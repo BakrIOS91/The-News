@@ -1,9 +1,5 @@
 //
 //  WithViewSate.swift
-//  IHFEduTCA
-//
-//  Created by Bakr mohamed on 06/11/2022.
-//
 
 import SwiftUI
 

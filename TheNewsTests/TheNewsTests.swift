@@ -1,9 +1,6 @@
 //
 //  TheNewsTests.swift
-//  TheNewsTests
-//
-//  Created by Bakr mohamed on 14/11/2022.
-//
+
 
 import XCTest
 @testable import TheNews

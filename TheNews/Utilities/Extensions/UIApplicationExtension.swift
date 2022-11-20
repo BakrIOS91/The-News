@@ -1,9 +1,6 @@
 //
 //  UIApplicationExtension.swift
-//  TheNews
-//
-//  Created by Bakr mohamed on 16/11/2022.
-//
+
 
 import UIKit
 

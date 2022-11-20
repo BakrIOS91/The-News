@@ -1,9 +1,6 @@
 //
 //  NewsRequest.swift
-//  IHFEduTCA
-//
-//  Created by Bakr mohamed on 19/10/2022.
-//
+
 
 import Foundation
 enum NewsRequests: BaseRequestProtocol {
