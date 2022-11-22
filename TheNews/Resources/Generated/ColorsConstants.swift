@@ -15,6 +15,4 @@ extension Color {
   public static let appNavTintColor = Color("appNavTintColor")
   public static let appRed = Color("appRed")
   public static let appWhite = Color("appWhite")
-  public static let black = Color("black")
-  public static let clear = Color("clear")
 }
